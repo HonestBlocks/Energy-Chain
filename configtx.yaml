@@ -1,0 +1,75 @@
+
+Organizations:
+
+    - &OrdererOrg
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: ../Energy-Chain/crypto-config/ordererOrganizations/energychain.com/msp
+
+    - &prosumer
+        Name: prosumerMSP
+        ID: prosumerMSP
+        MSPDir: ../Energy-Chain/crypto-config/peerOrganizations/prosumer.energychain.com/msp
+        AnchorPeers:
+            - Host: peer0.prosumer.energychain.com
+              Port: 7051
+    - &consumer
+        Name: consumerMSP
+        ID: consumerMSP
+        MSPDir: ../Energy-Chain/crypto-config/peerOrganizations/consumer.energychain.com/msp
+        AnchorPeers:
+            - Host: peer0.consumer.energychain.com
+              Port: 7051
+    - &exchange
+        Name: exchangeMSP
+        ID: exchangeMSP
+        MSPDir: ../Energy-Chain/crypto-config/peerOrganizations/exchange.energychain.com/msp
+        AnchorPeers:
+            - Host: peer0.exchange.energychain.com
+              Port: 7051
+   
+Orderer: &OrdererDefaults
+
+    OrdererType: kafka
+    Addresses:
+        - orderer0.energychain.com:7050
+        - orderer1.energychain.com:7050
+        - orderer2.energychain.com:7050
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+    Kafka:
+        Brokers:
+            - kafka0:9092
+            - kafka1:9092
+            - kafka2:9092
+            - kafka3:9092
+    Organizations:
+Application: &ApplicationDefaults
+    Organizations:
+
+
+Profiles:
+
+    energy_chain:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            SampleConsortium:
+                Organizations:
+                    - *prosumer
+                    - *consumer
+                    - *exchange
+                  
+    commonchannel:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+               - *prosumer
+               - *consumer
+               - *exchange

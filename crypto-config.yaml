@@ -1,0 +1,25 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: energychain.com
+    Template:
+      Count: 3
+PeerOrgs:
+  - Name: Prosumer
+    Domain: prosumer.energychain.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Consumer 
+    Domain: consumer.energychain.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Exchange
+    Domain: exchange.energychain.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  

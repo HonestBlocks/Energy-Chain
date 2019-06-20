@@ -7,19 +7,19 @@ PeerOrgs:
   - Name: Prosumer
     Domain: prosumer.energychain.com
     Template:
-      Count: 1
+      Count: 2
     Users:
       Count: 1
   - Name: Consumer 
     Domain: consumer.energychain.com
     Template:
-      Count: 1
+      Count: 2
     Users:
       Count: 1
   - Name: Exchange
     Domain: exchange.energychain.com
     Template:
-      Count: 1
+      Count: 2
     Users:
       Count: 1
   

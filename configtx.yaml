@@ -30,22 +30,24 @@ Organizations:
    
 Orderer: &OrdererDefaults
 
-    OrdererType: kafka
+    OrdererType: solo
     Addresses:
         - orderer0.energychain.com:7050
-        - orderer1.energychain.com:7050
-        - orderer2.energychain.com:7050
+       # - orderer1.energychain.com:7050
+      #  - orderer2.energychain.com:7050
     BatchTimeout: 2s
     BatchSize:
         MaxMessageCount: 10
         AbsoluteMaxBytes: 99 MB
         PreferredMaxBytes: 512 KB
     Kafka:
-        Brokers:
-            - kafka0:9092
-            - kafka1:9092
-            - kafka2:9092
-            - kafka3:9092
+      #  Brokers:
+       #     - kafka0:9092
+       #     - kafka1:9092
+       #     - kafka2:9092
+       #     - kafka3:9092
+         Brokers:
+            - 127.0.0.1:9092
     Organizations:
 Application: &ApplicationDefaults
     Organizations:

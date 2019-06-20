@@ -27,10 +27,10 @@ Organizations:
         AnchorPeers:
             - Host: peer0.exchange.energychain.com
               Port: 7051
-   
+
 Orderer: &OrdererDefaults
 
-    OrdererType: kafka
+    OrdererType: solo
     Addresses:
         - orderer0.energychain.com:7050
         - orderer1.energychain.com:7050
@@ -64,7 +64,7 @@ Profiles:
                     - *prosumer
                     - *consumer
                     - *exchange
-                  
+
     commonchannel:
         Consortium: SampleConsortium
         Application:

@@ -122,7 +122,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.exchange.energychain.com:11051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.exchange.energychain.com:12051
-      - CORE_PEER_LOCALMSPID=consumerMSP
+      - CORE_PEER_LOCALMSPID=exchangeMSP
     volumes:
         - /var/run/:/host/var/run/
         - ../crypto-config/peerOrganizations/exchange.energychain.com/peers/peer0.exchange.energychain.com/msp:/etc/hyperledger/fabric/msp

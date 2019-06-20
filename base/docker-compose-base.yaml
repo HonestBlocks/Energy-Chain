@@ -94,12 +94,12 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer1.consumer.energychain.com
-      - CORE_PEER_ADDRESS=peer1.consumer.energychain.com:9051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.consumer.energychain.com:9052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.consumer.energychain.com:9051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.consumer.energychain.com:10051
+      - CORE_PEER_ADDRESS=peer1.consumer.energychain.com:10051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:10051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.consumer.energychain.com:10052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:10052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.consumer.energychain.com:10051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.consumer.energychain.com:9051
       - CORE_PEER_LOCALMSPID=consumerMSP
     volumes:
         - /var/run/:/host/var/run/
@@ -116,12 +116,12 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer0.exchange.energychain.com
-      - CORE_PEER_ADDRESS=peer0.exchange.energychain.com:9051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.exchange.energychain.com:9052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.exchange.energychain.com:9051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.exchange.energychain.com:10051
+      - CORE_PEER_ADDRESS=peer0.exchange.energychain.com:11051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.exchange.energychain.com:11052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.exchange.energychain.com:11051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.exchange.energychain.com:12051
       - CORE_PEER_LOCALMSPID=consumerMSP
     volumes:
         - /var/run/:/host/var/run/
@@ -129,7 +129,7 @@ services:
         - ../crypto-config/peerOrganizations/exchange.energychain.com/peers/peer0.exchange.energychain.com/tls:/etc/hyperledger/fabric/tls
         - peer0.exchange.energychain.com:/var/hyperledger/production
     ports:
-      - 1151:1151
+      - 11051:11051
 
   peer1.exchange.energychain.com:
     container_name: peer1.exchange.energychain.com
@@ -138,12 +138,12 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer1.exchange.energychain.com
-      - CORE_PEER_ADDRESS=peer1.exchange.energychain.com:9051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.exchange.energychain.com:9052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.exchange.energychain.com:9051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.exchange.energychain.com:10051
+      - CORE_PEER_ADDRESS=peer1.exchange.energychain.com:12051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:12051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.exchange.energychain.com:12052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:12052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.exchange.energychain.com:11051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.exchange.energychain.com:12051
       - CORE_PEER_LOCALMSPID=exchangeMSP
     volumes:
         - /var/run/:/host/var/run/
@@ -151,4 +151,4 @@ services:
         - ../crypto-config/peerOrganizations/exchange.energychain.com/peers/peer1.exchange.energychain.com/tls:/etc/hyperledger/fabric/tls
         - peer1.exchange.energychain.com:/var/hyperledger/production
     ports:
-      - 1251:1251
+      - 12051:12051

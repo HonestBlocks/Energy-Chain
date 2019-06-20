@@ -8,10 +8,10 @@ version: '2'
 volumes:
   orderer0.energychain.com:
   peer0.prosumer.energychain.com:
-  peer0.consumer.energychain.com:
-  peer0.exchange.energychain.com:
   peer1.prosumer.energychain.com:
+  peer0.consumer.energychain.com:
   peer1.consumer.energychain.com:
+  peer0.exchange.energychain.com:
   peer1.exchange.energychain.com:
 
 networks:
@@ -39,7 +39,7 @@ services:
     container_name: peer1.prosumer.energychain.com
     extends:
       file:  base/docker-compose-base.yaml
-      service: peer1.org1.energychain.com
+      service: peer1.prosumer.energychain.com
     networks:
       - byfn
 
@@ -59,7 +59,7 @@ services:
     networks:
       - byfn
 
- peer0.exchange.energychain.com:
+  peer0.exchange.energychain.com:
     container_name: peer0.exchange.energychain.com
     extends:
       file:  base/docker-compose-base.yaml
@@ -74,5 +74,3 @@ services:
       service: peer1.exchange.energychain.com
     networks:
       - byfn
-
-  

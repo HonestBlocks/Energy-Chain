@@ -4,26 +4,26 @@ Organizations:
     - &OrdererOrg
         Name: OrdererOrg
         ID: OrdererMSP
-        MSPDir: ../crypto-config/ordererOrganizations/energychain.com/msp
+        MSPDir: crypto-config/ordererOrganizations/energychain.com/msp
 
     - &prosumer
         Name: prosumerMSP
         ID: prosumerMSP
-        MSPDir: ../crypto-config/peerOrganizations/prosumer.energychain.com/msp
+        MSPDir: crypto-config/peerOrganizations/prosumer.energychain.com/msp
         AnchorPeers:
             - Host: peer0.prosumer.energychain.com
               Port: 7051
     - &consumer
         Name: consumerMSP
         ID: consumerMSP
-        MSPDir: ../crypto-config/peerOrganizations/consumer.energychain.com/msp
+        MSPDir: crypto-config/peerOrganizations/consumer.energychain.com/msp
         AnchorPeers:
             - Host: peer0.consumer.energychain.com
               Port: 7051
     - &exchange
         Name: exchangeMSP
         ID: exchangeMSP
-        MSPDir: ../crypto-config/peerOrganizations/exchange.energychain.com/msp
+        MSPDir: crypto-config/peerOrganizations/exchange.energychain.com/msp
         AnchorPeers:
             - Host: peer0.exchange.energychain.com
               Port: 7051

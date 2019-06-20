@@ -1,0 +1,78 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+volumes:
+  orderer0.energychain.com:
+  peer0.prosumer.energychain.com:
+  peer0.consumer.energychain.com:
+  peer0.exchange.energychain.com:
+  peer1.prosumer.energychain.com:
+  peer1.consumer.energychain.com:
+  peer1.exchange.energychain.com:
+
+networks:
+  byfn:
+
+services:
+
+  orderer0.energychain.com:
+    extends:
+      file:   base/docker-compose-base.yaml
+      service: orderer0.energychain.com
+    container_name: orderer0.energychain.com
+    networks:
+      - byfn
+
+  peer0.prosumer.energychain.com:
+    container_name: peer0.prosumer.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.prosumer.energychain.com
+    networks:
+      - byfn
+
+  peer1.prosumer.energychain.com:
+    container_name: peer1.prosumer.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.org1.energychain.com
+    networks:
+      - byfn
+
+  peer0.consumer.energychain.com:
+    container_name: peer0.consumer.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.consumer.energychain.com
+    networks:
+      - byfn
+
+  peer1.consumer.energychain.com:
+    container_name: peer1.consumer.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.consumer.energychain.com
+    networks:
+      - byfn
+
+ peer0.exchange.energychain.com:
+    container_name: peer0.exchange.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.exchange.energychain.com
+    networks:
+      - byfn
+
+  peer1.exchange.energychain.com:
+    container_name: peer1.exchange.energychain.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.exchange.energychain.com
+    networks:
+      - byfn
+
+  

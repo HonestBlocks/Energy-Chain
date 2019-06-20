@@ -2,7 +2,7 @@ OrdererOrgs:
   - Name: Orderer
     Domain: energychain.com
     Template:
-      Count: 3
+      Count: 1
 PeerOrgs:
   - Name: Prosumer
     Domain: prosumer.energychain.com

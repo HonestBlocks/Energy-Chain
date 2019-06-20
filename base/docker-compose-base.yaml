@@ -142,8 +142,8 @@ services:
       - CORE_PEER_LISTENADDRESS=0.0.0.0:12051
       - CORE_PEER_CHAINCODEADDRESS=peer1.exchange.energychain.com:12052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:12052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.exchange.energychain.com:11051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.exchange.energychain.com:12051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.exchange.energychain.com:12051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.exchange.energychain.com:11051
       - CORE_PEER_LOCALMSPID=exchangeMSP
     volumes:
         - /var/run/:/host/var/run/

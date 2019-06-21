@@ -1,0 +1,20 @@
+{
+  "name": "chaincode",
+  "version": "1.0.0",
+  "description": "Energy-Chain contract implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Energy",
+    "Hyperledger",
+    "Blockchain"
+  ],
+  "author": "Sarthak Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-contract-api": "^1.4.1",
+    "fabric-network": "^1.4.2"
+  }
+}

@@ -11,7 +11,7 @@
     "Hyperledger",
     "Blockchain"
   ],
-  "author": "Sarthak Kumar",
+  "author": "HonestBlocks",
   "license": "ISC",
   "dependencies": {
     "fabric-contract-api": "^1.4.1",

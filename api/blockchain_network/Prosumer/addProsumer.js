@@ -4,16 +4,9 @@ const { FileSystemWallet, Gateway } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 
-// capture network variables from config.json
-const configPath = path.join(process.cwd(), '..', '/config.json');
-const configJSON = fs.readFileSync(configPath, 'utf8');
-const config = JSON.parse(configJSON);
-var connection_file = config.connection_file;
-var gatewayDiscovery = config.gatewayDiscovery;
-
-const ccpPath = path.resolve(__dirname, '..', connection_file);
-const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
-const ccp = JSON.parse(ccpJSON);
+var firstnetwork_path = path.resolve('..', '..', '..');
+var org1tlscacert_path = path.resolve(firstnetwork_path, 'crypto-config', 'peerOrganizations', 'exchange.energychain.com', 'tlsca', 'tlsca.exchange.energychain.com-cert.pem');
+var org1tlscacert = fs.readFileSync(org1tlscacert_path, 'utf8');
 
 // ID from wallet for the resident
 const participantId = 'R1';

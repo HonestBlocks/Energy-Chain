@@ -1,0 +1,44 @@
+---
+name: basic-network
+version: 1.0.0
+client:
+    organization: Prosumer
+    connection:
+        timeout:
+            peer:
+                endorser: '300'
+            orderer: '300'
+channels:
+    mychannel:
+        orderers:
+        - orderer.energychain.com
+        peers:
+            peer0.prosumer.energychain.com: {}
+organizations:
+    Prosumer:
+        mspid: prosumerMSP
+        peers:
+        - peer0.prosumer.energychain.com
+        certificateAuthorities:
+        - ca.energychain.com
+
+      Exchange:
+        mspid: exchangeMSP
+        peers:
+        - peer0.exchange.energychain.com
+        certificateAuthorities:
+        - ca.energychain.com
+
+orderers:
+    orderer.energychain.com:
+        url: grpc://localhost:7050
+peers:
+    peer0.prosumer.energychain.com:
+        url: grpc://localhost:7051
+    peer0.exchange.energychain.com:
+        url: grpc://localhost:7051
+        
+certificateAuthorities:
+    ca.energychain.com:
+        url: http://localhost:7054
+        caName: ca.energychain.com

@@ -4,9 +4,9 @@ const { FileSystemWallet, Gateway } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 
-var firstnetwork_path = path.resolve('..', '..', '..');
-var org1tlscacert_path = path.resolve(firstnetwork_path, 'crypto-config', 'peerOrganizations', 'exchange.energychain.com', 'tlsca', 'tlsca.exchange.energychain.com-cert.pem');
-var org1tlscacert = fs.readFileSync(org1tlscacert_path, 'utf8');
+const ccpPath = path.resolve(__dirname, '..', 'connection.json');
+const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
+const ccp = JSON.parse(ccpJSON);
 
 // ID from wallet for the participant
 const participantId = 'R1';
@@ -17,7 +17,7 @@ async function tradeCash() {
     try {
 
         // Create a new file system based wallet for managing identities.
-        const walletPath = path.join(process.cwd(), '..', '_idwallet');
+        const walletPath = path.join(__dirname, 'hfc-key-store');
         const wallet = new FileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
 
